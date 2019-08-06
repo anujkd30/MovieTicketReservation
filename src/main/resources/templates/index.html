@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <form action="/theatre/" method="post"  th:object="${theatreDetails}">
+        <table>
+            <tr>
+                <td><label for="Theatre-Type">Theatre Type : </label></td>
+                <td><input type="text" name="type" id = "Theatre-Type"></input></td>
+            </tr>
+            <tr>
+                <td><label for="Number of Screens">Number of Screens : </label></td>
+                <td><input type="text" name="no_of_screens" id = "Number of Screens"></input></td>
+            </tr>
+
+            <tr>
+                <td><label for="Theatre-Name">Theatre Name : </label></td>
+                <td><input type="text" name="name" id = "Theatre-Name"></input></td>
+            </tr>
+            <tr>
+                <td><label for="Reserved-seats">Reserved Seats : </label></td>
+                <td><input type="text" name="reserved_seats" id = "Reserved-seats"></input></td>
+            </tr>
+
+            <tr>
+                <td><label for="Capacity">Capacity : </label></td>
+                <td><input type="text" name="capacity" id ="Capacity"></input></td>
+            </tr>
+            <tr>
+                <td><label for="Number of Rows">Number of Rows : </label></td>
+                <td><input type="text" name="no_of_rows" id = "Number of Rows"></input></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit"></input></td>
+            </tr>
+        </table>
+    </form>
+    <tr>
+        <td><button type = "button" onclick="location.href = './theatre/showTheatres'"> View Theatres </button></td>
+    </tr>
+
+    <form th:method="delete" th:action = "@{/theatre/}">
+        <input type = "text" name = "id"/>
+        <input type = "submit" value = "Delete"/>
+    </form>
+
+    <form th:method="put" th:action = "@{/theatre/}">
+        <input type = "text" name = "id"/>
+        <input type = "text" name = "name"/>
+        <input type = "submit" value = "Update"/>
+    </form>
+</body>
+</html>

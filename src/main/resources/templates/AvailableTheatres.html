@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theatres</title>
+</head>
+<body>
+   <table border="1">
+       <tr>
+           <th>Type</th>
+           <th>Name</th>
+           <th>Reserved Seats</th>
+           <th>Number of Rows</th>
+           <th>Number of Screens</th>
+       </tr>
+       <tr th:each = "Theatre: ${list}">
+           <td th:text="${Theatre.type}"></td>
+           <td th:text="${Theatre.name}"></td>
+           <td th:text="${Theatre.reserved_seats}"></td>
+           <td th:text="${Theatre.no_of_rows}"></td>
+           <td th:text="${Theatre.no_of_screens}"></td>
+       </tr>
+   </table>
+</body>
+</html>
